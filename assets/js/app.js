@@ -250,7 +250,7 @@ let quoteKanye = document.getElementById("kanye");
 fetch("https://api.kanye.rest")
     .then(res=> res.json())
     .then(quote =>{
-        quoteKanye.innerHTML =`${quote.quote}`
+        quoteKanye.innerHTML =` "${quote.quote}"`
         console.log(quote.quote)
     })
     
