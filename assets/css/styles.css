@@ -415,6 +415,11 @@ img {
   justify-content: center;
 }
 
+.kanye_quote{
+
+  font-style: italic;
+}
+
 /* SKILLS */
 
 .skills_container {

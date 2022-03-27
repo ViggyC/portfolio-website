@@ -24,24 +24,6 @@ oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
 app.get("/", (req, res) => {
   
-  
-  // var quoteAuthor;
-  //  const settings = {
-  //     "async": true,
-  //     "crossDomain": true,
-  //     "url": "https://type.fit/api/quotes",
-  //     "method": "GET"
-  //   }
-  //   axios.request(settings).then(function (response) {
-
-  //     var numQuotes = response.data.length;
-  //     var randomQuote  = Math.floor(Math.random() * numQuotes); 
-      
-  //     // quote = response.data[randomQuote].text;
-  //     quoteAuthor = response.data[randomQuote].author;
-  //     console.log(quote + "--" + quoteAuthor);
-    
-  //    });
 
      res.render(__dirname + "/assets/index.html", {display: quote});
 });

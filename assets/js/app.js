@@ -2,6 +2,10 @@
 /*eslint no-undef: "error"*/
 //Show nav menu
 
+//kanye
+
+
+
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close')
@@ -241,3 +245,12 @@ contactForm.addEventListener('submit', (e)=>{
     xhr.send(JSON.stringify(formData));
     
 })
+
+let quoteKanye = document.getElementById("kanye");
+fetch("https://api.kanye.rest")
+    .then(res=> res.json())
+    .then(quote =>{
+        quoteKanye.innerHTML =`${quote.quote}`
+        console.log(quote.quote)
+    })
+    
