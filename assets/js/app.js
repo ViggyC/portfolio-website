@@ -247,10 +247,12 @@ contactForm.addEventListener('submit', (e)=>{
 })
 
 let quoteKanye = document.getElementById("kanye");
+let author = "Kanye West";
 fetch("https://api.kanye.rest")
     .then(res=> res.json())
     .then(quote =>{
-        quoteKanye.innerHTML =` "${quote.quote}"`
+        quoteKanye.innerHTML +=` "${quote.quote}"<br/>`
+        quoteKanye.innerHTML +=`                - ${author}`
         console.log(quote.quote)
     })
     
