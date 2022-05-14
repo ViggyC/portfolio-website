@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.static("assets"));
 app.use(express.json());
 
+
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = "https://developers.google.com/oauthplayground";
@@ -22,10 +23,13 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
+//app.use(express.static(path.join(__dirname, 'public')));
+
 app.get("/", (req, res) => {
   
 
-     res.render(__dirname + "/assets/index.html", {display: quote});
+     //res.render(__dirname + "index.html");
+     res.sendFile(__dirname +'/index.html');
 });
 
 app.post("/", (req, res) => {
