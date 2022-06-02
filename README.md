@@ -1,7 +1,6 @@
-# Here is the source code for my online portfolio website!
-# Deployed via Heroku
-# This app uses Google OAuth2 in order to allow secure access to my gmail account and to prevent any login issues
-# People who visit my site should be able to send me emails with no issues
+# This is the source code for my online portfolio 
+Built with html, css, javascript, and Google OAuth2.0
+Hosted through AWS
 
-https://vigneshchandrasekhar.herokuapp.com/
+http://vigneshchandrasekhar.com/
 
