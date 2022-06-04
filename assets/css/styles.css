@@ -426,8 +426,10 @@ img {
 }
 
 .kanye_quote{
-
+  margin-top: 2rem;
+  text-align: center;
   font-style: italic;
+  margin-bottom: 0px;
 }
 
 /* SKILLS */
