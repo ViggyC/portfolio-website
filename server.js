@@ -41,7 +41,7 @@ app.post("/", (req, res) => {
     service: "gmail",
     auth: {
       type: "OAuth2",
-      user: "vigneshc5723@gmail.com", //user which has access to send emails, change to admin email
+      user: process.env.EMAIL, //user which has access to send emails, change to admin email
       clientId: CLIENT_ID,
       clientSecret: CLIENT_SECRET,
       refreshToken: REFRESH_TOKEN,
@@ -51,7 +51,7 @@ app.post("/", (req, res) => {
 
   const mailOptions = {
     from: req.body.email,
-    to: "vigneshc5723@gmail.com",
+    to: process.env.EMAIL,
     subject: `Message from ${req.body.email}: ${req.body.subject}`,
     text: `${req.body.message} \n\n From: ${req.body.name}`,
   };
