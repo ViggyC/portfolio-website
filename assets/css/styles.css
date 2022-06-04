@@ -394,6 +394,16 @@ img {
   margin-bottom: var(--mb-2-5);
 }
 
+.about_photo{
+  text-align: center;
+  margin-top: 10rem;
+
+  font-size: var(  --h2-font-size);
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+ 
+}
+
 .about_info-title {
   font-size: var(--h2-font-size);
   font-weight: var(--font-semi-bold);

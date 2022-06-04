@@ -1,6 +1,6 @@
 # This is the source code for my online portfolio 
 Built with html, css, javascript, and Google OAuth2.0
-Hosted through AWS
+Hosted on AWS elastic beanstalk
 
-http://vigneshchandrasekhar.com/
+https://vigneshchandrasekhar.com/
 
