@@ -205,46 +205,46 @@ themeButton.addEventListener('click', () => {
 
 
 ////////////////////////////////////////////////Contact form////////////////////////////////////////////////
-const contactForm = document.querySelector('.contact-form');
-let name = document.getElementById('name');
-let email = document.getElementById('email');
-let subject = document.getElementById('subject');
-let message = document.getElementById('message');
+// const contactForm = document.querySelector('.contact-form');
+// let name = document.getElementById('name');
+// let email = document.getElementById('email');
+// let subject = document.getElementById('subject');
+// let message = document.getElementById('message');
 
-console.log(name, email, subject, message);
+// console.log(name, email, subject, message);
 
-contactForm.addEventListener('submit', (e)=>{
-    e.preventDefault();
+// contactForm.addEventListener('submit', (e)=>{
+//     e.preventDefault();
 
-    let formData={
-        name: name.value,
-        email: email.value,
-        subject: subject.value,
-        message: message.value
-    }
+//     let formData={
+//         name: name.value,
+//         email: email.value,
+//         subject: subject.value,
+//         message: message.value
+//     }
 
-    //console.log(formData);
+//     //console.log(formData);
 
-    //ajax
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/');
-    xhr.setRequestHeader('content-type', 'application/json');
-    xhr.onload = function(){
-        console.log(xhr.responseText);
-        if(xhr.responseText=== 'success'){
-            alert('Email sent! I will get back to you soon :)--Vignesh');
-            name.value= '';
-            email.value= '';
-            subject.value='';
-            message.value='';
-        }else{
-            alert('Something went wrong')
-        }
-    }
+//     //ajax
+//     let xhr = new XMLHttpRequest();
+//     xhr.open('POST', '/');
+//     xhr.setRequestHeader('content-type', 'application/json');
+//     xhr.onload = function(){
+//         console.log(xhr.responseText);
+//         if(xhr.responseText=== 'success'){
+//             alert('Email sent! I will get back to you soon :)--Vignesh');
+//             name.value= '';
+//             email.value= '';
+//             subject.value='';
+//             message.value='';
+//         }else{
+//             alert('Something went wrong')
+//         }
+//     }
 
-    xhr.send(JSON.stringify(formData));
+//     xhr.send(JSON.stringify(formData));
     
-})
+// })
 
 let quoteKanye = document.getElementById("kanye");
 let author = "Kanye West";

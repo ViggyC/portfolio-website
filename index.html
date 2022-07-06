@@ -892,7 +892,7 @@
             </div>
           </div>
 
-          <form action="" method="POST" class="contact-form contact_form grid">
+          <!-- <form action="" method="POST" class="contact-form contact_form grid">
             <div class="contact_inputs grid">
               <div class="contact_content">
                 <label for="" class="contact_label">Name</label>
@@ -938,12 +938,34 @@
             </div>
 
             <div>
-              <button name="submit" type="submit" class="button button--flex">
+              <button name="submit" type="submit" class="button button--flex" disabled>
                 Send Message
                 <i class="uil uil-message"></i>
+
               </button>
             </div>
-          </form>
+          </form> -->
+          <form
+              action="https://formspree.io/f/mbjqynkq"
+              method="POST"
+              class="contact-form contact_form grid"
+            >
+              <label class="contact_label">
+                Your email:
+                <input class="contact_input" type="email" name="email">
+              </label>
+              <label>
+                Your message:
+                <textarea class="contact_input" name="message"></textarea>
+              </label>
+              <!-- your other form fields go here -->
+              <div>
+                <button class="button button--flex" id="my-form-button">Send Message
+                  <i class="uil uil-message"></i>
+                </button>
+                <p id="my-form-status"></p>
+            </div>
+        </form>
         </div>
         <div>
           <p class = "kanye_quote" id="kanye"></p>
@@ -1011,5 +1033,37 @@
     </script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/app.js" async defer></script>
+    <script>
+      var form = document.getElementById("my-form");
+      
+      async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+              'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            status.innerHTML = "Thanks for your submission!";
+            form.reset()
+          } else {
+            response.json().then(data => {
+              if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+              } else {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+              }
+            })
+          }
+        }).catch(error => {
+          status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+      }
+      form.addEventListener("submit", handleSubmit)
+  </script>
   </body>
 </html>
