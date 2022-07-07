@@ -8,7 +8,8 @@ const { google } = require("googleapis");
 
 const PORT = process.env.PORT || 5000;
 
-app.use(express.static("assets"));
+app.use('/', express.static('assets'))
+
 app.use(express.json());
 
 
