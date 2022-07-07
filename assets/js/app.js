@@ -261,6 +261,7 @@ var form = document.getElementById("my-form");
       }).then(response => {
         if (response.ok) {
           status.innerHTML = "Thanks for your submission! I will get back to you soon";
+          alert(response)
           console.log(response)
           form.reset()
         } else {
